@@ -1012,15 +1012,15 @@ parentViewController:(UIViewController*)parentViewController
 // builds the green box and red line
 //-------------------------------------------------------------------------
 
-- (UIImage_)buildReticleImage {
-    UIImage_ result;
+- (UIImage*)buildReticleImage {
+    UIImage* result;
     UIGraphicsBeginImageContext(CGSizeMake(RETICLE_SIZE, RETICLE_SIZE));
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     if (self.processor.is1D) {
         UIColor* color = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:RETICLE_ALPHA];
         CGContextSetStrokeColorWithColor(context, color.CGColor);
-        CGContextSetLineWidth(context, 0.5_RETICLE_WIDTH);
+        CGContextSetLineWidth(context, 0.5*RETICLE_WIDTH);
         CGContextBeginPath(context);
         CGFloat lineOffset = RETICLE_OFFSET+(0.5_RETICLE_WIDTH);
         CGContextMoveToPoint(context, lineOffset, RETICLE_SIZE/2);
@@ -1036,8 +1036,8 @@ parentViewController:(UIViewController*)parentViewController
             CGRectMake(
                 RETICLE_OFFSET,
                 RETICLE_OFFSET,
-                RETICLE_SIZE-2_RETICLE_OFFSET,
-                RETICLE_SIZE-2_RETICLE_OFFSET
+                RETICLE_SIZE-2*RETICLE_OFFSET,
+                RETICLE_SIZE-2*RETICLE_OFFSET
             )
         );
     }
