@@ -1022,7 +1022,7 @@ parentViewController:(UIViewController*)parentViewController
         CGContextSetStrokeColorWithColor(context, color.CGColor);
         CGContextSetLineWidth(context, 0.5*RETICLE_WIDTH);
         CGContextBeginPath(context);
-        CGFloat lineOffset = RETICLE_OFFSET+(0.5_RETICLE_WIDTH);
+        CGFloat lineOffset = RETICLE_OFFSET+(0.5*RETICLE_WIDTH);
         CGContextMoveToPoint(context, lineOffset, RETICLE_SIZE/2);
         CGContextAddLineToPoint(context, RETICLE_SIZE-lineOffset, 0.5*RETICLE_SIZE);
         CGContextStrokePath(context);
