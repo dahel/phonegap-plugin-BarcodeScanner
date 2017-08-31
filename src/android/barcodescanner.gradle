@@ -14,7 +14,7 @@ repositories{
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:25.3.0'
+    compile 'com.android.support:support-v4:24.1.1+'
     compile(name:'barcodescanner', ext:'aar')
 }
 
@@ -22,16 +22,5 @@ android {
     packagingOptions {
         exclude 'META-INF/NOTICE'
         exclude 'META-INF/LICENSE'
-    }
-}
-
-configurations.all {
-    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-        def requested = details.requested
-        if (requested.group == 'com.android.support') {
-            if (!requested.name.startsWith("multidex")) {
-                details.useVersion '25.3.0'
-            }
-        }
     }
 }
