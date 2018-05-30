@@ -1,8 +1,8 @@
-def minSdkVersion = 16
+def minSdkVersion = 15
 
-if(cdvMinSdkVersion == null) {
+if(ext.cdvMinSdkVersion == null) {
     ext.cdvMinSdkVersion = minSdkVersion;
-} else if (cdvMinSdkVersion.toInteger() < minSdkVersion) {
+} else if (ext.cdvMinSdkVersion.toInteger() < minSdkVersion) {
     ext.cdvMinSdkVersion = minSdkVersion;
 }
 
